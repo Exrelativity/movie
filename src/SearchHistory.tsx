@@ -2,13 +2,13 @@
 
 import React from "react";
 
-const SearchHistory = ({ history }:{[key: string]:any}):React.ReactNode => {
+const SearchHistory = ({ history }: { [key: string]: any }): React.ReactNode => {
   return (
-    <div className="flex flex-col container justify-start items-start">
-      <h3 className='w-full text-center text-xl font-bold py-4'>Search History</h3>
-      <ul className='list-decimal list-outside'>
-        {history.map((query:any, index:number) => (
-          <li className='hover:text-blue-950 hover:underline cursor-pointer' key={index}>{query}</li>
+    <div className="container flex flex-col items-start justify-start py-4">
+      <h3 className='w-full py-4 text-center text-xl font-bold'>Search History</h3>
+      <ul className='list-outside list-decimal'>
+        {history.map((query: any, index: number) => (
+          <li className='cursor-pointer hover:text-blue-950 hover:underline' key={index}>{query}</li>
         ))}
       </ul>
     </div>

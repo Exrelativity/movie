@@ -41,7 +41,7 @@ const App = (): React.ReactNode => {
   };
 
   return (
-    <div className='flex w-full flex-col items-center justify-center gap-4 bg-neutral-100'>
+    <div className='flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-neutral-100'>
       <h1 className='w-full py-4 text-center text-2xl font-bold'>Movie Search App</h1>
       <MovieSearch onSearch={handleSearch} onSaveQuery={handleSaveSearchQuery} />
       {searchResults && <SearchResults results={searchResults} onSelectMovie={handleMovieSelect} />}
