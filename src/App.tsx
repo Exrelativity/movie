@@ -6,14 +6,14 @@ import SearchHistory from './SearchHistory';
 import SearchResults from './SearchResults';
 import MovieDetails from './MovieDetails';
 
-const App = ():React.ReactNode => {
+const App = (): React.ReactNode => {
   const [searchHistory, setSearchHistory] = useState<any[]>([]);
   const [searchResults, setSearchResults] = useState<any[]>();
   const [selectedMovie, setSelectedMovie] = useState<any>();
 
   const API_KEY = '8151d16c';
 
-  const handleSearch = async (query:string) => {
+  const handleSearch = async (query: string) => {
     try {
       const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
       const data = await response.json();
@@ -24,7 +24,7 @@ const App = ():React.ReactNode => {
     }
   };
 
-  const handleMovieSelect = async (imdbID:string) => {
+  const handleMovieSelect = async (imdbID: string) => {
     try {
       const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`);
       const data = await response.json();
@@ -35,14 +35,14 @@ const App = ():React.ReactNode => {
     }
   };
 
-  const handleSaveSearchQuery = (query:string) => {
+  const handleSaveSearchQuery = (query: string) => {
     const updatedHistory = [query, ...searchHistory.slice(0, 4)];
     setSearchHistory(updatedHistory);
   };
 
   return (
-    <div className='w-full flex flex-col justify-center items-center gap-4'>
-      <h1 className='w-full text-center text-2xl font-bold py-4'>Movie Search App</h1>
+    <div className='flex w-full flex-col items-center justify-center gap-4 bg-neutral-100'>
+      <h1 className='w-full py-4 text-center text-2xl font-bold'>Movie Search App</h1>
       <MovieSearch onSearch={handleSearch} onSaveQuery={handleSaveSearchQuery} />
       {searchResults && <SearchResults results={searchResults} onSelectMovie={handleMovieSelect} />}
       {selectedMovie && <MovieDetails movie={selectedMovie} />}
