@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
 
-const MovieDetails = ({ movie }:{movie:any}) => {
+import React from "react";
+
+const MovieDetails = ({ movie }:{movie:any}):React.ReactNode => {
   return (
     <div className="flex flex-col justify-start container items-start">
       <h3 className='w-full text-center text-xl font-bold py-4'><span className="font-bold">Title:</span> {movie.Title}</h3>

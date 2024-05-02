@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import MovieSearch from './MovieSearch';
 import SearchHistory from './SearchHistory';
 import SearchResults from './SearchResults';
 import MovieDetails from './MovieDetails';
 
-const App = () => {
+const App = ():React.ReactNode => {
   const [searchHistory, setSearchHistory] = useState<any[]>([]);
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [selectedMovie, setSelectedMovie] = useState<any>(null);

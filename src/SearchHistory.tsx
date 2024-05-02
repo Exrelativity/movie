@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
 
-const SearchHistory = ({ history }:{[key: string]:any}) => {
+import React from "react";
+
+const SearchHistory = ({ history }:{[key: string]:any}):React.ReactNode => {
   return (
     <div className="flex flex-col container justify-start items-start">
       <h3 className='w-full text-center text-xl font-bold py-4'>Search History</h3>

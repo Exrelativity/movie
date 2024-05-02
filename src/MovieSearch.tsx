@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 
-const MovieSearch = ({ onSearch, onSaveQuery }:{[key: string]:any}) => {
+const MovieSearch = ({ onSearch, onSaveQuery }:{[key: string]:any}):React.ReactNode => {
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
