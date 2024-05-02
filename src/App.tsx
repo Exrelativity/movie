@@ -5,6 +5,7 @@ import MovieSearch from './MovieSearch';
 import SearchHistory from './SearchHistory';
 import SearchResults from './SearchResults';
 import MovieDetails from './MovieDetails';
+import { Analytics } from "@vercel/analytics/react"
 
 const App = (): React.ReactNode => {
   const [searchHistory, setSearchHistory] = useState<any[]>([]);
@@ -47,6 +48,7 @@ const App = (): React.ReactNode => {
       {searchResults && <SearchResults results={searchResults} onSelectMovie={handleMovieSelect} />}
       {selectedMovie && <MovieDetails movie={selectedMovie} />}
       {searchHistory.length > 0 && <SearchHistory history={searchHistory} />}
+      <Analytics />
     </div>
   );
 };
