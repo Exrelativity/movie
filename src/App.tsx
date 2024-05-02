@@ -8,8 +8,8 @@ import MovieDetails from './MovieDetails';
 
 const App = ():React.ReactNode => {
   const [searchHistory, setSearchHistory] = useState<any[]>([]);
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [selectedMovie, setSelectedMovie] = useState<any>(null);
+  const [searchResults, setSearchResults] = useState<any[]>();
+  const [selectedMovie, setSelectedMovie] = useState<any>();
 
   const API_KEY = '8151d16c';
 
@@ -44,9 +44,9 @@ const App = ():React.ReactNode => {
     <div className='w-full flex flex-col justify-center items-center gap-4'>
       <h1 className='w-full text-center text-2xl font-bold py-4'>Movie Search App</h1>
       <MovieSearch onSearch={handleSearch} onSaveQuery={handleSaveSearchQuery} />
-      <SearchResults results={searchResults} onSelectMovie={handleMovieSelect} />
+      {searchResults && <SearchResults results={searchResults} onSelectMovie={handleMovieSelect} />}
       {selectedMovie && <MovieDetails movie={selectedMovie} />}
-      <SearchHistory history={searchHistory} />
+      {searchHistory.length > 0 && <SearchHistory history={searchHistory} />}
     </div>
   );
 };
