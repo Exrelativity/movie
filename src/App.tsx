@@ -15,7 +15,7 @@ const App = ():React.ReactNode => {
 
   const handleSearch = async (query:string) => {
     try {
-      const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
+      const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
       const data = await response.json();
       setSearchResults(data.Search || []);
     } catch (error) {
@@ -26,7 +26,7 @@ const App = ():React.ReactNode => {
 
   const handleMovieSelect = async (imdbID:string) => {
     try {
-      const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`);
+      const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`);
       const data = await response.json();
       setSelectedMovie(data);
     } catch (error) {
