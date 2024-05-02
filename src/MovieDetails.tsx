@@ -8,9 +8,13 @@ const MovieDetails = ({ movie }:{movie:any}):React.ReactNode => {
       <h3 className='w-full text-center text-xl font-bold py-4'><span className="font-bold">Title:</span> {movie.Title}</h3>
       <div className='flex flex-row justify-start'><div className='flex flex-row justify-start'><img className='rounded-md w-[600px]' src={movie.Poster} alt={movie.Title} /></div>
       <div className='flex flex-col justify-start'>
-        <p><span className="font-bold">Plot:</span> {movie.Plot}</p>
-        <br/>
-        <p><span className="font-bold">IMDB Rating:</span> {movie.imdbRating}</p>
+      <p><span className="font-bold">Year:</span> {movie.Year}</p>
+      <p><span className="font-bold">Genre:</span> {movie.Genre}</p>
+      <p><span className="font-bold">IMDB Rating:</span> {movie.imdbRating}</p>
+      <p><span className="font-bold">Director:</span> {movie.Director}</p>
+      <p><span className="font-bold">Writer:</span> {movie.Writer}</p>
+    <p><span className="font-bold">Plot:</span> {movie.Plot}</p>
+   
       {/* Add more details as needed */}
       </div>
       </div>
